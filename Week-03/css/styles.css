@@ -25,7 +25,7 @@ aside {
     position: absolute;
     float: left;
     width: 336px;
-    height: 5903px;
+    height: 5500px;
     background-color: #D5DD3C
 }
 main {
@@ -37,7 +37,7 @@ footer {
     position: absolute;
     height: 148px;
     width: 1512px;
-    margin-top: 5800px;
+    margin-top: 5500px;
     background-color: #323232
 }
 footer ul {
@@ -57,7 +57,7 @@ nav ul li a {
     color: #000
 }
 aside article {
-    margin-top: 5200px
+    margin-top: 4900px
 }
 aside article ul {
     padding-left: 45px
@@ -89,18 +89,16 @@ aside article ul li img {
     width: 150px;
     height: 30px;
     margin: 0 20px 0 10px;
-    padding: 20px 0 20px 0;
+    padding: 0px 0 40px 0;
     border-radius: 4px;
     background-color: #fff;
     font-size: 25px;
-    color: #000
-}
-.button-container p {
-    display: inline-block;
     text-transform: uppercase;
     color: #000;
 }
 .button-container img {
+    position: relative;
+    top: 10px;
     width: 45px
 }
 #home {
@@ -165,18 +163,6 @@ aside article ul li img {
     background-size: cover;
     border-radius: 10px
 }
-#features-reservations{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/reservations.png)
-}
-#features-schedule{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/schedule.jpg)
-}
-#features-memberships{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/membership.jpeg)
-}
-#features-contact{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/conttact-suggestions.png)
-}
 .features-card h3 {
     padding-top: 40px;
     font-size: 50px;
@@ -184,9 +170,23 @@ aside article ul li img {
     color: #E3EC39
 }
 .features-card p{
-    padding-top: 30px;
-    font-size: 30px;
+    padding-top: 50px;
+    font-size: 20px;
     text-align: center
+}
+#features-reservations{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/reservations.png)
+}
+#features-schedule{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/schedule.jpg)
+}
+#features-memberships{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/membership.jpeg);
+    position: relative;
+    top: -50px
+}
+#features-contact{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../Assets/Images/conttact-suggestions.png)
 }
 #contact-us {
     height: 600px
