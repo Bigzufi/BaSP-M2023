@@ -13,11 +13,15 @@ We work in groups creating a Figma screenflow of the Gym Webpage
 
 ## Week 02
 
-We had to recreate the landig page in HTML working individually and upload the code on GitHub 
+We had to recreate the landig page in HTML working individually and upload the code on GitHub
+
+## Week 03
+We continued working individually adding styles to the landing page with css, using the pixel perfect paradigm
 
 ## Technologies
 - Figma
 - HTML
+- Css
 - Git
 
 ## Author
