@@ -2,6 +2,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
     width: 100%;
     min-height: 154px;
 }
@@ -29,7 +30,7 @@ header .header-buttons .menu-icon{
 }
 .header-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around
 }
 .button-container{
     display: none;
