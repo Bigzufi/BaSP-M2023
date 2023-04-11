@@ -1,13 +1,11 @@
 aside {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     width: 22%;
     background-color: #D5DD3C;
 }
 aside nav {
     position: sticky;
+    margin: auto;
     margin-top: 5rem;
 }
 aside nav ul li {
@@ -267,6 +265,25 @@ aside nav ul li a {
 #memberships article:nth-child(3) {
     background-image: linear-gradient(#00000080, #000000CC), url("../../Assets/Images/black.jpg")
 }
+#our-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+#our-story article{
+    width: 80%;
+    height: auto;
+    background-color: #E0E0E0E5;
+    border-radius: 10px
+}
+#our-story article p {
+    padding: 10px 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #000
+}
 @media (min-width: 601px) and (max-width: 1024px) {
     #home h2 {
         width: 580px;
@@ -375,5 +392,23 @@ aside nav ul li a {
     }
     .memberships-card h3 {
         font-size: 4rem;
+    }
+    .memberships-card p {
+        font-size: 2.4rem;
+    }
+    #our-story {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #our-story .section-title {
+        font-size: 6rem;
+        width: 300px;
+    }
+    #our-story article {
+        width: 50%;
+        padding: 20px 30px;
+    }
+    #our-story article p {
+        font-size: 2.4rem;
     }
 }
