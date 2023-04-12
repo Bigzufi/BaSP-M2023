@@ -18,11 +18,16 @@ We had to recreate the landig page in HTML working individually and upload the c
 ## Week 03
 We continued working individually adding styles to the landing page with css, using the pixel perfect paradigm
 
+## Week 04
+
+We had to make the page responsive, using Flexbox and the mobile first design. Also we configure this repo with GitHub pages. You can check it [here](https://bigzufi.github.io/BaSP-M2023/Week-04/index.html)
+
 ## Technologies
 - Figma
 - HTML
 - Css
 - Git
+- GitHub Pages
 
 ## Author
 - [Cristian Zufiaurre](https://github.com/Bigzufi)
