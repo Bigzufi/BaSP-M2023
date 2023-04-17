@@ -25,9 +25,9 @@ console.log(sumString);
 (cantidad de letras del string) guardando el resultado de la suma en una 3er variable (utilizar length).*/
 console.log('-Exercise 1.c: ');
 
-var string3 = 'periodico';
-var string4 = 'matutino';
+var string3 = 'periodic';
+var string4 = 'matutine';
 
 var sumLength = string3.length + string4.length;
 
-console.log(sumLength)
+console.log(sumLength);
