@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Gym, Fitness, Crossfit, Spinning, Functional, Box, Health, Body"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../Assets/Logos/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <title>Mega Rocket Gym</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <img
+          src="../../Assets/Logos/radiumrocketlogo.png"
+          alt="mega rocket logo"
+          id="rr-logo"
+        />
+        <h1>MEGA ROCKET<span> S.A.</span></h1>
+      </div>
+      <div class="header-buttons">
+        <a href="./login.html" class="button-container">
+          Login
+          <img src="../../Assets/Logos/login-icon.png" alt="login icon" />
+        </a>
+        <a href="./sign-up.html" class="button-container">
+          Sign Up
+          <img src="../../Assets/Logos/signup-icon.png" alt="sign up icon" />
+        </a>
+        <a href="#" class="menu-icon">
+          <img src="../../Assets/Logos/hamburger-logo.png" alt="menu-icon" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">HOME</a>
+            </li>
+            <li>
+              <a href="#features">FEATURES</a>
+            </li>
+            <li>
+              <a href="#contact-us">CONTACT US</a>
+            </li>
+            <li>
+              <a href="#activities">ACTIVITIES</a>
+            </li>
+            <li>
+              <a href="#memberships">MEMBERSHIPS</a>
+            </li>
+            <li>
+              <a href="#our-story">OUR STORY</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="main-container">
+        <section id="home">
+          <h2>DON´T SIT<span>GET FIT</span></h2>
+          <div id="home-text">
+            <p>
+              Your best version is waiting for you, join Mega Rocket Gym today.
+            </p>
+            <p>
+              In this app you can choose our best personal trainers and the best
+              classes
+            </p>
+            <p>and have a bunch of privileges with our different memberships</p>
+          </div>
+        </section>
+        <section id="features">
+          <h2 class="section-title">FEATU<span>RES</span></h2>
+          <div class="features-card-container">
+            <article class="features-card">
+              <h3>RESERVATIONS</h3>
+              <p>Choose your favorite class and ensure your place</p>
+            </article>
+            <article class="features-card">
+              <h3>SCHEDULE</h3>
+              <p>Monday to saturday 08 am till 08 pm</p>
+            </article>
+          </div>
+          <div class="features-card-container">
+            <article class="features-card">
+              <h3>MEMBERSHIPS</h3>
+              <p>Pick which one is best for you</p>
+            </article>
+            <article class="features-card">
+              <h3>CONTACT AND SUGGESTIONS</h3>
+              <p>Your opinion is important to us, it helps us improve</p>
+            </article>
+          </div>
+        </section>
+        <section id="contact-us">
+          <h2 class="section-title">CONTACT<span>US</span></h2>
+          <form id="contact-form" action="#">
+            <div class="form-up">
+              <fieldset>
+                <p>Name</p>
+                <input type="text" id="name" placeholder="Name" />
+              </fieldset>
+              <fieldset>
+                <p>Surname</p>
+                <input type="text" id="surname" placeholder="Surname" />
+              </fieldset>
+              <fieldset>
+                <p>E-mail</p>
+                <input type="email" id="e-mail" placeholder="E-mail" />
+              </fieldset>
+              <fieldset>
+                <p>Contact Reason</p>
+                <select id="reason">
+                  <option value="">Choose one</option>
+                  <option value="costs">
+                    I want to know the memberships and costs
+                  </option>
+                  <option value="suggestion">
+                    I want to make a query or suggestion
+                  </option>
+                  <option value="claim">I want to make a claim</option>
+                </select>
+              </fieldset>
+            </div>
+            <div class="form-down">
+              <p>Message</p>
+              <textarea
+                cols="30"
+                rows="10"
+                id="message"
+                placeholder="Write here..."
+              ></textarea>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </section>
+        <section id="activities">
+          <h2 class="section-title">ACTIVI<span>TIES</span></h2>
+          <ul id="activities-1">
+            <li>
+              <h3>CROSSFIT</h3>
+            </li>
+            <li>
+              <h3>BOX</h3>
+            </li>
+          </ul>
+          <ul id="activities-2">
+            <li>
+              <h3>FUNCTIONAL</h3>
+            </li>
+            <li>
+              <h3>SPINNING</h3>
+            </li>
+            <li>
+              <h3>FITNESS</h3>
+            </li>
+          </ul>
+        </section>
+        <section id="memberships">
+          <h2 class="section-title">MEMBER<span>SHIPS</span></h2>
+          <div id="memberships-card-container">
+            <article class="memberships-card">
+              <h3>ONLY CLASSES MEMBERSHIP</h3>
+              <p>FREE ACCESS TO CLASSES WITH REGISTRATION</p>
+              <p>SCHEDULE VIEW</p>
+            </article>
+            <article class="memberships-card">
+              <h3>CLASSIC MEMBERSHIP</h3>
+              <p>FREE ACCESS TO THE GYM</p>
+              <p>PERSONALIZED MONITORING &amp; COACHING</p>
+              <p>SCHEDULE VIEW</p>
+            </article>
+            <article class="memberships-card">
+              <h3>BLACK MEMBERSHIP</h3>
+              <p>FREE ACCESS TO THE GYM</p>
+              <p>FREE ACCESS TO CLASSES WITH REGISTRATION</p>
+              <p>PERSONALIZED MONITORING &amp; COACHING</p>
+              <p>SCHEDULE VIEW</p>
+            </article>
+          </div>
+        </section>
+        <section id="our-story">
+          <div>
+            <h2 class="section-title">OUR<span>STORY</span></h2>
+          </div>
+          <article>
+            <p>
+              We are one of the oldest but most modern gyms. 50 trainers work in
+              MR GYM and more than 200 people come to our place everyday.
+            </p>
+            <p>
+              We are dedicated to helping you improve your quality of life in a
+              fun and active way
+            </p>
+          </article>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <ul id="footer-icons-left">
+        <li>
+          <a href="https://www.instagram.com/">
+            @ROCKETGYM
+            <img
+              src="../../Assets/Logos/instagram-logo.png"
+              alt="Instagram Logo"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.whatsapp.com/?lang=es">
+            +1 408 741 2369
+            <img
+              src="../../Assets/Logos/whatsapp-logo.png"
+              alt="Whatsapp Logo"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/">
+            Mega Rocket GYM
+            <img
+              src="../../Assets/Logos/facebook-logo.png"
+              alt="Facebook Logo"
+            />
+          </a>
+        </li>
+      </ul>
+      <ul id="footer-center">
+        <li>
+          <a href="#">
+            Av. Pellegrini 3535
+            <img src="../../Assets/Logos/mapa.png" alt="map icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            +464 206 96
+            <img src="../../Assets/Logos/ring-phone.png" alt="phone icon" />
+          </a>
+        </li>
+      </ul>
+      <ul id="footer-rigth">
+        <li>
+          <p>MEGA ROCKET SA</p>
+        </li>
+        <li>
+          <p>All rights reserved. 2023 &copy;</p>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

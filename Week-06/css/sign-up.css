@@ -1,0 +1,85 @@
+#form-sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  margin: 2rem 0;
+  background-color: #d9d9d9cc;
+  border: none;
+  border-radius: 0.3rem;
+}
+#form-sign-up h4 {
+  padding: 1.5rem 0;
+  font-size: 3rem;
+  text-align: center;
+  color: #e3ec39;
+}
+.field-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#form-sign-up fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  width: 90%;
+}
+#form-sign-up label {
+  padding-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: #000000;
+}
+#form-sign-up input {
+  height: 2.3rem;
+  border-radius: 0.2rem;
+  border: 1px solid #000000;
+}
+#form-sign-up input::placeholder {
+  padding-left: 0.3rem;
+}
+#form-sign-up button {
+  background-color: #e3ec39e6;
+  font-size: 1.8rem;
+  color: #000000;
+  padding: 0.7rem 1.5rem;
+  margin: 5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.form-button-container {
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  #form-sign-up h4 {
+    font-size: 4rem;
+  }
+  .field-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #form-sign-up fieldset {
+    width: 40%;
+  }
+  .field-container fieldset:last-child {
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #form-sign-up h4 {
+    font-size: 5rem;
+  }
+  .field-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #form-sign-up fieldset {
+    width: 30%;
+  }
+}

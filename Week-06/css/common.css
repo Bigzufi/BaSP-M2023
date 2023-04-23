@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    max-width: 100%;
+    min-width: 360px;
+    background-color: #535353;
+    color: #fff;
+    font-family: 'Lato', sans-serif
+}
+a{
+    text-decoration: none;
+}
+main{
+    display: flex;
+}

@@ -1,0 +1,458 @@
+aside {
+  display: none;
+  width: 22%;
+  background-color: #d5dd3c;
+}
+aside nav {
+  margin: auto;
+  margin-top: 5rem;
+}
+aside nav ul li {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+aside nav ul li a {
+  color: #000;
+  font-size: 3rem;
+  font-weight: bold;
+}
+aside nav ul li a:hover {
+  text-decoration: underline;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.alt-main {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(#000000cc, #000000cc),
+    url(../../Assets/Images/reservations.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 80%;
+}
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 690px;
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/entrenamiento-personal.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#home h2 {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  padding-top: 4%;
+  font-size: 6rem;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+}
+#home h2 span {
+  align-self: flex-end;
+  color: #e3ec39;
+}
+#home-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 4rem 3rem;
+}
+#home-text p {
+  font-size: 2rem;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+#features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
+}
+.section-title {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 3rem 0;
+  font-size: 7rem;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+}
+.section-title span {
+  align-self: flex-end;
+  color: #e3ec39;
+}
+.features-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+}
+.features-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+  height: 250px;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.features-card:hover {
+  box-shadow: 5px 5px #00000080;
+}
+.features-card h3 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #e3ec39;
+  text-shadow: 2px 2px #000000;
+}
+.features-card p {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.features-card-container article:nth-child(1) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url(../../Assets/Images/reservations.png);
+}
+.features-card-container article:nth-child(2) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url(../../Assets/Images/schedule.jpg);
+}
+.features-card-container article:nth-child(3) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url(../../Assets/Images/membership.jpeg);
+}
+.features-card-container article:nth-child(4) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url(../../Assets/Images/conttact-suggestions.png);
+}
+#contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  min-height: 450px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #000000;
+}
+.form-up,
+.form-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 60%;
+}
+.form-up fieldset {
+  width: 100%;
+}
+.form-up p,
+.form-down p {
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.form-up input,
+.form-up select {
+  width: 100%;
+  height: 30px;
+  background-color: #dedede;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.form-up input::placeholder {
+  text-align: center;
+}
+.form-down textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #dedede;
+  border: none;
+  border-radius: 5px;
+}
+.form-down textarea::placeholder {
+  padding-top: 1.2rem;
+  padding-left: 1rem;
+  font-family: "Lato", sans-serif;
+}
+.form-down button {
+  width: 74px;
+  height: 34px;
+  margin: 3rem 0;
+  background-color: #d5dd3c;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: #000000;
+}
+#activities,
+#activities-1,
+#activities-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#activities-1,
+#activities-2 {
+  width: 100%;
+}
+#activities-1 li,
+#activities-2 li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 90%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  text-align: center;
+}
+#activities-1 h3,
+#activities-2 h3 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #00000080;
+  background-size: cover;
+}
+#activities-1 li:nth-child(1) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/crossfit.jpg");
+}
+#activities-1 li:nth-child(2) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/boxing.png");
+}
+#activities-2 li:nth-child(1) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/functional.jpeg");
+}
+#activities-2 li:nth-child(2) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/spinning.png");
+}
+#activities-2 li:nth-child(3) {
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../Assets/Images/fitness.jpg");
+}
+#memberships {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#memberships-card-container {
+  width: 90%;
+}
+.memberships-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 390px;
+  margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.memberships-card h3 {
+  color: #e3ec39;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
+.memberships-card p {
+  font-size: 2rem;
+  text-align: center;
+}
+#memberships article:nth-child(1) {
+  background-image: linear-gradient(#00000080, #000000cc),
+    url("../../Assets/Images/only-classes.png");
+}
+#memberships article:nth-child(2) {
+  background-image: linear-gradient(#00000080, #000000cc),
+    url("../../Assets/Images/classic.png");
+}
+#memberships article:nth-child(3) {
+  background-image: linear-gradient(#00000080, #000000cc),
+    url("../../Assets/Images/black.jpg");
+}
+#our-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 5rem;
+}
+#our-story article {
+  width: 80%;
+  height: auto;
+  background-color: #e0e0e0e5;
+  border-radius: 10px;
+}
+#our-story article p {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #000000;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  #home h2 {
+    width: 580px;
+    font-size: 10rem;
+  }
+  #home-text p {
+    font-size: 3rem;
+  }
+  .section-title {
+    font-size: 9rem;
+    width: 450px;
+  }
+  .features-card {
+    height: 450px;
+  }
+  .features-card h3,
+  #activities-1 h3,
+  #activities-2 h3 {
+    font-size: 7rem;
+  }
+  .features-card p {
+    font-size: 4rem;
+  }
+  .form-up {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .form-up fieldset {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 2rem;
+  }
+  .form-up p,
+  .form-up input::placeholder {
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .form-down {
+    width: 85%;
+  }
+  .form-down p {
+    align-self: flex-start;
+    padding-left: 1rem;
+  }
+  #activities-1 li,
+  #activities-2 li {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  aside {
+    display: flex;
+  }
+  .main-container {
+    width: 78%;
+  }
+  #home {
+    background-image: linear-gradient(#00000080, #00000080),
+      url("../../Assets/Images/dontsit.png");
+  }
+  #home h2 {
+    width: 700px;
+    font-size: 10rem;
+  }
+  #home-text p {
+    font-size: 3rem;
+  }
+  .features-card-container {
+    flex-direction: row;
+  }
+  .features-card {
+    width: 45%;
+    height: 290px;
+    margin: 0;
+  }
+  .section-title {
+    font-size: 9rem;
+    width: 450px;
+  }
+  .form-up {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .form-up fieldset {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+  .form-up p,
+  .form-up input::placeholder {
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .form-down p {
+    align-self: flex-start;
+    padding-left: 10px;
+  }
+  #activities-1,
+  #activities-2 {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #activities-1 li,
+  #activities-2 li {
+    width: 30%;
+    height: 200px;
+  }
+  #memberships-card-container {
+    width: 50%;
+  }
+  .memberships-card {
+    height: 575px;
+    margin: 4rem 0;
+  }
+  .memberships-card h3 {
+    font-size: 4rem;
+  }
+  .memberships-card p {
+    font-size: 2.4rem;
+  }
+  #our-story {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #our-story .section-title {
+    font-size: 6rem;
+    width: 300px;
+  }
+  #our-story article {
+    width: 50%;
+    padding: 2rem 3rem;
+  }
+  #our-story article p {
+    font-size: 2.4rem;
+  }
+}
