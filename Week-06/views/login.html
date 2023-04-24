@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/login.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <script src="../js/login.js"></script>
         <title>Mega Rocket - Login</title>
 </head>
 <body>
@@ -24,6 +25,14 @@
             <h1>MEGA ROCKET<span> S.A.</span></h1>
         </div>
         <div class="header-buttons">
+            <a href="./index.html" class="button-container">
+                Home
+                <img src="../../Assets/Logos/home-icon.png" alt="login icon" />
+              </a>
+              <a href="./sign-up.html" class="button-container">
+                Sign up
+                <img src="../../Assets/Logos/signup-icon.png" alt="sign up icon" />
+              </a>
             <a href="#" class="menu-icon">
                 <img src="../../Assets/Logos/hamburger-logo.png" alt="menu-icon">
             </a>
@@ -32,16 +41,16 @@
     <main class="alt-main" >
         <form action="" id="form-login">
             <h4>Login</h4>
-            <fieldset class="fieldset-login">
+            <fieldset class="fieldset-login" id="email-fieldset">
                 <label for="email-login">E mail</label>
-                <input type="text" name="email" id="email-login" placeholder="example@gmail.com">
+                <input type="text" name="email" id="email-login" class="input-border" placeholder="example@gmail.com">
             </fieldset>
-            <fieldset class="fieldset-login">
+            <fieldset class="fieldset-login" id="pass-fieldset">
                 <label for="pass-login">Password</label>
-                <input type="text" name="password" id="pass-login" placeholder="**********">
+                <input type="password" name="password" id="pass-login" class="input-border" placeholder="**********">
                 <a href="#">Forgot your password?</a>
             </fieldset>
-            <button type="submit">Login</button>
+            <button type="submit" id="login-button">Login</button>
         </form>
     </main>
     <footer>
