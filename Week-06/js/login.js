@@ -7,8 +7,8 @@ window.onload = function () {
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var emailStatus = false;
   var passStatus = false;
-  var emailError = "You must povide a valid email";
-  var passError = "You must provide a password";
+  var emailError = "One of the fields have an error";
+  var passError = "One of the fields have an error";
   var emailValue = "";
 
   loginEmail.addEventListener("blur", checkEmail);
@@ -65,13 +65,13 @@ window.onload = function () {
           loginPass.classList.add("success-border");
         } else {
           passError =
-            "Password must have at least: 1 Number, 1 Capital letter, 1 Lowercase Letter and 1 symbol ";
+          "One of the fields have an error";
             passStatus = false;
         }
       }
       showErrorPass();
     } else {
-      passError = "Password must have at least 8 characters without spaces";
+      passError = "One of the fields have an error";
       passStatus = false;
       showErrorPass();
     }

@@ -30,7 +30,7 @@ We had to solve excercises with JavaScript you can check the results on this [li
 
 ## Week 06
 
-We add Javascript to the proyect, creating the Login and Sign-up pages. You can check this update [here](https://bigzufi.github.io/BaSP-M2023/Week-06/views/login.html)
+We add Javascript to the proyect, creating the Login and Sign-up pages. You can check this update [here](https://bigzufi.github.io/BaSP-M2023/Week-06/views/index.html)
 
 ## Technologies
 

@@ -380,13 +380,19 @@ window.onload = function () {
           "\nPassword: ********"
       );
     } else {
+      var mesageSubmitError = "";
       var errorSubmit = document.querySelectorAll(".error-field")
       for (var i = 0; i < errorSubmit.length; i++) {
         var errorSubmitElement = errorSubmit[i];
-        // var errorSubmitPrent = errorSubmitElement.parentNode
-        console.log(errorSubmitElement)
+        var errorSubmitId = errorSubmitElement.parentNode.id
+        var elementSelectorLabel = "#" + errorSubmitId + " label"
+        var elementSelectorText = "#" + errorSubmitId + " p"
+        var errorSubmitLabel = document.querySelector(elementSelectorLabel).textContent
+        var errorSubmitText = document.querySelector(elementSelectorText).textContent
+        var mesageSubmitElement = errorSubmitLabel +": " + errorSubmitText + "\n"
+        mesageSubmitError += mesageSubmitElement
       }
-      // console.log(errorSubmit)
+      alert(mesageSubmitError)
     }
   }
 };
