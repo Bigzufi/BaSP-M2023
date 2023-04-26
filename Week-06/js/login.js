@@ -66,11 +66,13 @@ window.onload = function () {
         } else {
           passError =
             "Password must have at least: 1 Number, 1 Capital letter, 1 Lowercase Letter and 1 symbol ";
+            passStatus = false;
         }
       }
       showErrorPass();
     } else {
       passError = "Password must have at least 8 characters without spaces";
+      passStatus = false;
       showErrorPass();
     }
   }

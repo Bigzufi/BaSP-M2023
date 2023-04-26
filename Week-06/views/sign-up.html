@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/sign-up.css" />
+    <script src="../js/sign-up.js"></script>
     <title>Mega Rocket - Sign Up</title>
   </head>
   <body>
@@ -57,60 +58,109 @@
         <div class="field-container">
           <fieldset>
             <label for="reg-name">Name</label>
-            <input type="text" id="reg-name" placeholder="Your Name" />
+            <input
+              type="text"
+              id="reg-name"
+              class="form-input"
+              placeholder="Your Name"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-surname">Surname</label>
-            <input type="text" id="reg-surname" placeholder="Your Surname" />
+            <input
+              type="text"
+              id="reg-surname"
+              class="form-input"
+              placeholder="Your Surname"
+            />
           </fieldset>
           <fieldset>
-            <label for="reg-dni">DNI</label>
-            <input type="text" id="reg-dni" placeholder="DNI" />
+            <label for="reg-dni">ID</label>
+            <input
+              type="text"
+              id="reg-dni"
+              class="form-input"
+              name="id"
+              placeholder="ID"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-date-birth">Date of Birth</label>
             <input
-              type="text"
+              type="date"
               id="reg-date-birth"
+              class="form-input"
               placeholder="Date of Birth"
             />
           </fieldset>
           <fieldset>
             <label for="reg-phone">Phone Number</label>
-            <input type="text" id="reg-phone" placeholder="Phone Number" />
+            <input
+              type="text"
+              id="reg-phone"
+              class="form-input"
+              placeholder="Phone Number"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-address">Address</label>
-            <input type="text" id="reg-address" placeholder="Address" />
+            <input
+              type="text"
+              id="reg-address"
+              class="form-input"
+              placeholder="Address"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-city">City</label>
-            <input type="text" id="reg-city" placeholder="City" />
+            <input
+              type="text"
+              id="reg-city"
+              class="form-input"
+              placeholder="City"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-zip">Zip Code</label>
-            <input type="text" id="reg-zip" placeholder="Zip Code" />
+            <input
+              type="text"
+              name="zip"
+              id="reg-zip"
+              class="form-input"
+              placeholder="Zip Code"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-email">E mail</label>
             <input
-              type="email"
+              type="text"
               id="reg-email"
+              class="form-input"
               placeholder="example@gmail.com"
             />
           </fieldset>
           <fieldset>
             <label for="reg-pass">Password</label>
-            <input type="text" id="reg-pass" placeholder="*********" />
+            <input
+              type="text"
+              id="reg-pass"
+              class="form-input"
+              placeholder="*********"
+            />
           </fieldset>
           <fieldset>
             <label for="reg-pass-repeat">Repeat Password</label>
-            <input type="text" id="reg-pass-repeat" placeholder="*********" />
+            <input
+              type="text"
+              id="reg-pass-repeat"
+              class="form-input"
+              placeholder="*********"
+            />
           </fieldset>
         </div>
         <div class="form-button-container">
-          <button type="submit">Sign Up</button>
-          <button>Go Back</button>
+          <button type="submit" id="reg-button">Register</button>
+          <button>Cancel</button>
         </div>
       </form>
     </main>

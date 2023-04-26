@@ -32,7 +32,7 @@
   font-size: 1.6rem;
   color: #000000;
 }
-#form-sign-up input {
+.form-input {
   height: 2.3rem;
   border-radius: 0.2rem;
   border: 1px solid #000000;
@@ -53,6 +53,17 @@
 .form-button-container {
   display: flex;
   justify-content: space-around;
+}
+.success-field {
+  border: 2px solid #00ff00;
+}
+.error-field {
+  border: 2px solid #ff0000;
+}
+.error-text {
+  display: flex;
+  font-size: 1.4rem;
+  color: #ff0000;
 }
 @media (min-width: 601px) and (max-width: 1024px) {
   #form-sign-up h4 {
