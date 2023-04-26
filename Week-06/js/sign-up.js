@@ -380,10 +380,11 @@ window.onload = function () {
           "\nPassword: ********"
       );
     } else {
-      var errorSubmit = document.querySelectorAll(".error-text")
+      var errorSubmit = document.querySelectorAll(".error-field")
       for (var i = 0; i < errorSubmit.length; i++) {
         var errorSubmitElement = errorSubmit[i];
-        console.log(errorSubmitElement.parentNode)
+        // var errorSubmitPrent = errorSubmitElement.parentNode
+        console.log(errorSubmitElement)
       }
       // console.log(errorSubmit)
     }
