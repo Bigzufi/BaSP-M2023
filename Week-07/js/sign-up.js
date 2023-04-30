@@ -15,6 +15,7 @@ window.onload = function () {
   var mesageError = "All fields are required";
   var passSuccess = "";
   var successfullDate = "";
+  var itemsLocalStorage = {};
 
   name.addEventListener("blur", validateName);
   surname.addEventListener("blur", validateName);
@@ -45,9 +46,7 @@ window.onload = function () {
     successField = document.getElementById(id);
     successField.classList.remove("error-field");
     successField.classList.add("success-field");
-    var valueID = document.getElementById(id)
-    localStorage.setItem(key=`${id}`, value=`${valueID.value}`)
-    console.log(valueID.value)
+    var valueID = document.getElementById(id);
   }
 
   function showError(id, errorId) {
@@ -153,7 +152,7 @@ window.onload = function () {
       var year = dateCurrent.substring(0, 4);
       var month = dateCurrent.substring(5, 7);
       var day = dateCurrent.substring(8, 10);
-      var reverseDate = month + "/" + day  + "/" + year;
+      var reverseDate = month + "/" + day + "/" + year;
       successfullDate = reverseDate;
       showSuccess(e.target.id);
     }
@@ -311,7 +310,6 @@ window.onload = function () {
       var intNumb = 0;
       var upper = 0;
       var lower = 0;
-      var special = 0;
       for (var i = 0; i < passCurrent.length; i++) {
         passChar = passCurrent.charAt(i);
         if (checkNumber(passChar)) {
@@ -320,16 +318,13 @@ window.onload = function () {
           upper++;
         } else if (checkLower(passChar)) {
           lower++;
-        } else {
-          special++;
         }
-        if (intNumb > 0 && upper > 0 && lower > 0 && special > 0) {
+        if (intNumb + upper + lower == passCurrent.length) {
           showSuccess(e.target.id);
           passSuccess = passCurrent;
           return;
         } else {
-          passError =
-            "Password must have at least: 1 Number, 1 Capital letter, 1 Lowercase Letter and 1 symbol ";
+          passError = "Password must have only letters and numbers";
         }
       }
       passSucces = "";
@@ -357,15 +352,87 @@ window.onload = function () {
     showError(e.target.id, passRepeatError);
   }
 
+  function adLocalStorage() {
+    localStorage.setItem((key = "name"), (value = name.value));
+    localStorage.setItem((key = "surname"), (value = surname.value));
+    localStorage.setItem((key = "dni"), (value = dni.value));
+    localStorage.setItem((key = "dateBirth"), (value = dateBirth.value));
+    localStorage.setItem((key = "phone"), (value = phone.value));
+    localStorage.setItem((key = "address"), (value = address.value));
+    localStorage.setItem((key = "city"), (value = city.value));
+    localStorage.setItem((key = "zip"), (value = zip.value));
+    localStorage.setItem((key = "email"), (value = email.value));
+    localStorage.setItem((key = "pass"), (value = pass.value));
+    localStorage.setItem((key = "passRepeat"), (value = passRepeat.value));
+  }
+  function getLocalStorage() {
+    var localName = localStorage.getItem("name");
+    var localSurname = localStorage.getItem("surname");
+    var localDni = localStorage.getItem("dni");
+    var localDateBirth = localStorage.getItem("dateBirth");
+    var localPhone = localStorage.getItem("phone");
+    var localAddress = localStorage.getItem("address");
+    var localCity = localStorage.getItem("city");
+    var localZip = localStorage.getItem("zip");
+    var localEmail = localStorage.getItem("email");
+    var localPass = localStorage.getItem("pass");
+    var localPassRepeat = localStorage.getItem("passRepeat");
+
+    if (
+      localName &&
+      localSurname &&
+      localDni &&
+      localDateBirth &&
+      localPhone &&
+      localAddress &&
+      localZip &&
+      localCity &&
+      localEmail &&
+      localPass &&
+      localPassRepeat
+    ) {
+      name.value = localName;
+      surname.value = localSurname;
+      dni.value = localDni;
+      dateBirth.value = localDateBirth;
+      phone.value = localPhone;
+      address.value = localAddress;
+      zip.value = localZip;
+      city.value = localCity;
+      email.value = localEmail;
+      pass.value = localPass;
+      passRepeat.value = localPassRepeat;
+    }
+  }
+  getLocalStorage();
+  function activateBlur() {
+    var eventBlur = new Event("blur");
+    name.dispatchEvent(eventBlur);
+    surname.dispatchEvent(eventBlur);
+    dni.dispatchEvent(eventBlur);
+    dateBirth.dispatchEvent(eventBlur);
+    phone.dispatchEvent(eventBlur);
+    address.dispatchEvent(eventBlur);
+    zip.dispatchEvent(eventBlur);
+    city.dispatchEvent(eventBlur);
+    email.dispatchEvent(eventBlur);
+    pass.dispatchEvent(eventBlur);
+    passRepeat.dispatchEvent(eventBlur);
+  }
   function regSubmit(e) {
     e.preventDefault();
-    headers = `?name=${name.value}&lastName=${surname.value}&dni=${dni.value}&dob=${successfullDate}&phone=${phone.value}&address=${address.value}&city=${city.value}&zip=${zip.value}&email=${email.value}&password=JFIOEWFEWJO334`;
-    urlSuccess= `${url}${headers}`
+    activateBlur();
+    params = `?name=${name.value}&lastName=${surname.value}&dni=${dni.value}&dob=${successfullDate}&phone=${phone.value}&address=${address.value}&city=${city.value}&zip=${zip.value}&email=${email.value}&password=${pass.value}`;
+    urlSuccess = `${url}${params}`;
     var successSubmit = document.querySelectorAll(".success-field");
     var errorSubmit = document.querySelectorAll(".error-field");
-    console.log(errorSubmit)
+    if (errorSubmit.length == 0 && successSubmit.length < 11) {
+      alert("All fields are required");
+      return;
+    }
     if (successSubmit.length == 11) {
       successFetch();
+      adLocalStorage();
     } else {
       var mesageSubmitError = "";
       for (var i = 0; i < errorSubmit.length; i++) {
@@ -381,28 +448,31 @@ window.onload = function () {
           errorSubmitLabel + ": " + errorSubmitText + "\n";
         mesageSubmitError += mesageSubmitElement;
       }
-      successFetch()
       alert(mesageSubmitError);
     }
   }
-  var headers = "";
+  var params = "";
   var url = "https://api-rest-server.vercel.app/signup";
-  var urlSuccess= ""
-  function successFetch(){
+  var urlSuccess = "";
+  function successFetch() {
     fetch(urlSuccess)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (upl) {
-      if(upl.success){
-        alert(`You are succefully registered!!\n${upl.msg}`)
-      }
-      console.log(headers);
-      console.log(urlSuccess)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          alert(`You are succefully registered!!\n${data.msg}`);
+        } else {
+          var msgErrorAlert = "";
+          for (var i = 0; i < data.errors.length; i++) {
+            var errorItem = data.errors[i].msg;
+            msgErrorAlert += `${errorItem}\n`;
+          }
+          throw new Error(msgErrorAlert);
+        }
+      })
+      .catch(function (error) {
+        alert(error);
+      });
   }
-  
 };

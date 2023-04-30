@@ -57,7 +57,7 @@ window.onload = function () {
         }
         if (intNumb + upper + lower == passCurrent.length) {
           passStatus = true;
-          passError = false;
+          passError = "";
           loginPass.classList.remove("error-border");
           loginPass.classList.add("success-border");
         } else {
@@ -83,7 +83,7 @@ window.onload = function () {
   function removeEmailError() {
     var pErrorMail = document.querySelector("#email-error-p");
     if (pErrorMail) {
-      loginPass.classList.remove("error-border");
+      loginEmail.classList.remove("error-border");
       pErrorMail.parentNode.removeChild(pErrorMail);
     }
   }
@@ -91,7 +91,7 @@ window.onload = function () {
   function removePassError() {
     var pErrorPass = document.querySelector("#pass-error-p");
     if (pErrorPass) {
-      loginEmail.classList.remove("error-border");
+      loginPass.classList.remove("error-border");
       pErrorPass.parentNode.removeChild(pErrorPass);
     }
   }
@@ -114,18 +114,6 @@ window.onload = function () {
     }
   }
 
-  function mostrarRepuesta(fr) {
-    if (fr.msg) {
-      alert(`ERROR!!\n${fr.msg}`);
-    } else {
-      var msgErrorAlert = "ERROR!!\n";
-      for (var i = 0; i < fr.errors.length; i++) {
-        var errorItem = fr.errors[i].msg;
-        msgErrorAlert += `${errorItem}\n`;
-      }
-      alert(msgErrorAlert);
-    }
-  }
   function mostrarRespuestaLogin(email, pass) {
     var url = `https://api-rest-server.vercel.app/login?email=${email}&password=${pass}`;
     fetch(url)
@@ -136,7 +124,16 @@ window.onload = function () {
         if (data.success) {
           alert(`Login Succesfull!!\n${data.msg}`);
         } else {
-          mostrarRepuesta(data);
+          if (data.msg) {
+            throw new Error(`${data.msg}`);
+          } else {
+            var msgErrorAlert = "";
+            for (var i = 0; i < data.errors.length; i++) {
+              var errorItem = data.errors[i].msg;
+              msgErrorAlert += `${errorItem}\n`;
+            }
+            throw new Error(msgErrorAlert);
+          }
         }
       })
       .catch(function (error) {
