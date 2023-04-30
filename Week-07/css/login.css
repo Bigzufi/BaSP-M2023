@@ -1,0 +1,71 @@
+#form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: #e3ec39e6;
+  border-radius: 3rem;
+  width: 90%;
+  height: auto;
+}
+#form-login h4 {
+  font-size: 2rem;
+  margin-top: 5rem;
+  color: #000000;
+}
+#form-login button {
+  background-color: #373867;
+  font-size: 1.8rem;
+  color: #e3ec39e6;
+  padding: 0.7rem 1.5rem;
+  margin: 5rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.fieldset-login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+.fieldset-login label {
+  font-size: 1.8rem;
+  color: #000000;
+  padding: 0 0 1rem 0;
+}
+.fieldset-login input {
+  width: 25rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.fieldset-login input::placeholder {
+  padding-left: 1rem;
+}
+.fieldset-login a {
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+  color: #000000;
+}
+.input-border {
+  border: 1px solid #000000;
+}
+.error-border {
+  border: 2px solid #ff0000;
+}
+.success-border {
+  border: 2px solid #00ff00;
+}
+#pass-error-p,
+#email-error-p {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25rem;
+  font-size: 1.6rem;
+  color: #ff0000;
+}
+@media screen and (min-width: 1025px) {
+  #form-login {
+    width: 45%;
+  }
+}

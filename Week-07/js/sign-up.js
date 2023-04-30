@@ -45,6 +45,9 @@ window.onload = function () {
     successField = document.getElementById(id);
     successField.classList.remove("error-field");
     successField.classList.add("success-field");
+    var valueID = document.getElementById(id)
+    localStorage.setItem(key=`${id}`, value=`${valueID.value}`)
+    console.log(valueID.value)
   }
 
   function showError(id, errorId) {
@@ -150,7 +153,7 @@ window.onload = function () {
       var year = dateCurrent.substring(0, 4);
       var month = dateCurrent.substring(5, 7);
       var day = dateCurrent.substring(8, 10);
-      var reverseDate = day + "/" + month + "/" + year;
+      var reverseDate = month + "/" + day  + "/" + year;
       successfullDate = reverseDate;
       showSuccess(e.target.id);
     }
@@ -356,32 +359,15 @@ window.onload = function () {
 
   function regSubmit(e) {
     e.preventDefault();
+    headers = `?name=${name.value}&lastName=${surname.value}&dni=${dni.value}&dob=${successfullDate}&phone=${phone.value}&address=${address.value}&city=${city.value}&zip=${zip.value}&email=${email.value}&password=JFIOEWFEWJO334`;
+    urlSuccess= `${url}${headers}`
     var successSubmit = document.querySelectorAll(".success-field");
+    var errorSubmit = document.querySelectorAll(".error-field");
+    console.log(errorSubmit)
     if (successSubmit.length == 11) {
-      alert(
-        "Name: " +
-          name.value +
-          "\nSurname: " +
-          surname.value +
-          "\nID: " +
-          dni.value +
-          "\nDate of birth: " +
-          successfullDate +
-          "\nPhone Number: " +
-          phone.value +
-          "\nAddress: " +
-          address.value +
-          "\nCity: " +
-          city.value +
-          "\nZip Code: " +
-          zip.value +
-          "\nEmail: " +
-          email.value +
-          "\nPassword: ********"
-      );
+      successFetch();
     } else {
       var mesageSubmitError = "";
-      var errorSubmit = document.querySelectorAll(".error-field");
       for (var i = 0; i < errorSubmit.length; i++) {
         var errorSubmitElement = errorSubmit[i];
         var errorSubmitId = errorSubmitElement.parentNode.id;
@@ -395,7 +381,28 @@ window.onload = function () {
           errorSubmitLabel + ": " + errorSubmitText + "\n";
         mesageSubmitError += mesageSubmitElement;
       }
+      successFetch()
       alert(mesageSubmitError);
     }
   }
+  var headers = "";
+  var url = "https://api-rest-server.vercel.app/signup";
+  var urlSuccess= ""
+  function successFetch(){
+    fetch(urlSuccess)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (upl) {
+      if(upl.success){
+        alert(`You are succefully registered!!\n${upl.msg}`)
+      }
+      console.log(headers);
+      console.log(urlSuccess)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  
 };

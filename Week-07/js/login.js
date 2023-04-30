@@ -40,7 +40,6 @@ window.onload = function () {
       var intNumb = 0;
       var upper = 0;
       var lower = 0;
-      var special = 0;
       for (var i = 0; i < passCurrent.length; i++) {
         char = passCurrent.charAt(i);
         if (char.charCodeAt() > 47 && char.charCodeAt() < 58) {
@@ -55,10 +54,8 @@ window.onload = function () {
           char.charCodeAt() == 241
         ) {
           lower++;
-        } else {
-          special++;
         }
-        if (intNumb > 0 && upper > 0 && lower > 0 && special > 0) {
+        if (intNumb + upper + lower == passCurrent.length) {
           passStatus = true;
           passError = false;
           loginPass.classList.remove("error-border");
@@ -78,18 +75,9 @@ window.onload = function () {
 
   function loginSubmit(e) {
     e.preventDefault();
-    var mesageAlert = "";
-    if (emailStatus) {
-      mesageAlert += "Email: " + emailValue + "\n";
-    } else {
-      mesageAlert += "ERROR Email: " + emailError + "\n";
+    if (emailStatus && passStatus) {
+      mostrarRespuestaLogin(loginEmail.value, loginPass.value);
     }
-    if (passStatus) {
-      mesageAlert += "Password: ********";
-    } else {
-      mesageAlert += "ERROR Password: " + passError;
-    }
-    alert(mesageAlert);
   }
 
   function removeEmailError() {
@@ -124,5 +112,35 @@ window.onload = function () {
       loginPass.classList.remove("success-border");
       loginPass.classList.add("error-border");
     }
+  }
+
+  function mostrarRepuesta(fr) {
+    if (fr.msg) {
+      alert(`ERROR!!\n${fr.msg}`);
+    } else {
+      var msgErrorAlert = "ERROR!!\n";
+      for (var i = 0; i < fr.errors.length; i++) {
+        var errorItem = fr.errors[i].msg;
+        msgErrorAlert += `${errorItem}\n`;
+      }
+      alert(msgErrorAlert);
+    }
+  }
+  function mostrarRespuestaLogin(email, pass) {
+    var url = `https://api-rest-server.vercel.app/login?email=${email}&password=${pass}`;
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          alert(`Login Succesfull!!\n${data.msg}`);
+        } else {
+          mostrarRepuesta(data);
+        }
+      })
+      .catch(function (error) {
+        alert(error);
+      });
   }
 };
