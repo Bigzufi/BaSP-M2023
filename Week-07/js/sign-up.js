@@ -11,11 +11,11 @@ window.onload = function () {
   var pass = document.querySelector("#reg-pass");
   var passRepeat = document.querySelector("#reg-pass-repeat");
   var regButton = document.querySelector("#reg-button");
+  var cancelButton = document.querySelector("#cancel-button");
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var mesageError = "All fields are required";
   var passSuccess = "";
   var successfullDate = "";
-  var itemsLocalStorage = {};
 
   name.addEventListener("blur", validateName);
   surname.addEventListener("blur", validateName);
@@ -29,6 +29,7 @@ window.onload = function () {
   pass.addEventListener("blur", validatePass);
   passRepeat.addEventListener("blur", validatePassRepeat);
   regButton.addEventListener("click", regSubmit);
+  cancelButton.addEventListener("click", cancelButton);
 
   name.addEventListener("focus", removeError);
   surname.addEventListener("focus", removeError);
@@ -46,7 +47,6 @@ window.onload = function () {
     successField = document.getElementById(id);
     successField.classList.remove("error-field");
     successField.classList.add("success-field");
-    var valueID = document.getElementById(id);
   }
 
   function showError(id, errorId) {
@@ -352,7 +352,7 @@ window.onload = function () {
     showError(e.target.id, passRepeatError);
   }
 
-  function adLocalStorage() {
+  function addLocalStorage() {
     localStorage.setItem((key = "name"), (value = name.value));
     localStorage.setItem((key = "surname"), (value = surname.value));
     localStorage.setItem((key = "dni"), (value = dni.value));
@@ -365,6 +365,7 @@ window.onload = function () {
     localStorage.setItem((key = "pass"), (value = pass.value));
     localStorage.setItem((key = "passRepeat"), (value = passRepeat.value));
   }
+
   function getLocalStorage() {
     var localName = localStorage.getItem("name");
     var localSurname = localStorage.getItem("surname");
@@ -402,6 +403,7 @@ window.onload = function () {
       email.value = localEmail;
       pass.value = localPass;
       passRepeat.value = localPassRepeat;
+      activateBlur();
     }
   }
   getLocalStorage();
@@ -419,10 +421,35 @@ window.onload = function () {
     pass.dispatchEvent(eventBlur);
     passRepeat.dispatchEvent(eventBlur);
   }
+
+  function cancelButton(e) {
+    e.preventDefault();
+    window.location.reload();
+  }
+
   function regSubmit(e) {
     e.preventDefault();
-    activateBlur();
-    params = `?name=${name.value}&lastName=${surname.value}&dni=${dni.value}&dob=${successfullDate}&phone=${phone.value}&address=${address.value}&city=${city.value}&zip=${zip.value}&email=${email.value}&password=${pass.value}`;
+    params =
+      "?name=" +
+      name.value +
+      "&lastName=" +
+      surname.value +
+      "&dni=" +
+      dni.value +
+      "&dob=" +
+      successfullDate +
+      "&phone=" +
+      phone.value +
+      "&address=" +
+      address.value +
+      "&city=" +
+      city.value +
+      "&zip=" +
+      zip.value +
+      "&email=" +
+      email.value +
+      "&password=" +
+      pass.value;
     urlSuccess = `${url}${params}`;
     var successSubmit = document.querySelectorAll(".success-field");
     var errorSubmit = document.querySelectorAll(".error-field");
@@ -432,7 +459,7 @@ window.onload = function () {
     }
     if (successSubmit.length == 11) {
       successFetch();
-      adLocalStorage();
+      addLocalStorage();
     } else {
       var mesageSubmitError = "";
       for (var i = 0; i < errorSubmit.length; i++) {
@@ -461,7 +488,40 @@ window.onload = function () {
       })
       .then(function (data) {
         if (data.success) {
-          alert(`You are succefully registered!!\n${data.msg}`);
+          alert(
+            "You are succefully registered!!\n" +
+              data.msg +
+              "\n" +
+              "User Id: " +
+              data.data.id +
+              "\n" +
+              "Name: " +
+              data.data.name +
+              "\n" +
+              "Surname: " +
+              data.data.lastName +
+              "\n" +
+              "ID: " +
+              data.data.dni +
+              "\n" +
+              "Phone: " +
+              data.data.phone +
+              "\n" +
+              "Address: " +
+              data.data.address +
+              "\n" +
+              "City: " +
+              data.data.city +
+              "\n" +
+              "Zip Code: " +
+              data.data.zip +
+              "\n" +
+              "Email: " +
+              data.data.email +
+              "\n" +
+              "Password: " +
+              data.data.password
+          );
         } else {
           var msgErrorAlert = "";
           for (var i = 0; i < data.errors.length; i++) {
