@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 90%;
   height: auto;
-  margin: 2rem 0;
+  margin: 2rem auto;
   background-color: #d9d9d9cc;
   border: none;
   border-radius: 0.3rem;

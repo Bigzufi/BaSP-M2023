@@ -1,18 +1,31 @@
 aside {
-  display: none;
-  width: 22%;
-  background-color: #d5dd3c;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #404040;
 }
 aside nav {
   margin: auto;
   margin-top: 5rem;
+  width: 100%;
+}
+.mobile-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-links li:nth-child(1) {
+  margin-left: 4.5rem;
+}
+.mobile-links li:nth-child(2) {
+  margin-right: 4.5rem;
 }
 aside nav ul li {
   text-align: center;
   padding: 2.5rem 0;
 }
 aside nav ul li a {
-  color: #000;
+  color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
 }
@@ -151,6 +164,7 @@ aside nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 90%;
   min-height: 450px;
   background-color: #ffffff;
@@ -372,8 +386,23 @@ aside nav ul li a:hover {
 @media screen and (min-width: 1025px) {
   aside {
     display: flex;
+    width: 22%;
+    background-color: #d5dd3c;
+  }
+  aside nav ul li a {
+    color: #000;
+  }
+  .aside-mobile {
+    display: none;
+  }
+  .mobile-links {
+    display: none;
   }
   .main-container {
+    flex-direction: row;
+    width: 100%;
+  }
+  .home-container {
     width: 78%;
   }
   #home {

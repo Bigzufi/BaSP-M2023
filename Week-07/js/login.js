@@ -22,8 +22,7 @@ window.onload = function () {
     if (mailCurrent.match(emailExpression)) {
       emailStatus = true;
       emailValue = mailCurrent;
-      loginEmail.classList.remove("error-border");
-      loginEmail.classList.add("success-border");
+      showSuccessLogin(e.target.id);
       return emailValue;
     } else {
       emailStatus = false;
@@ -31,6 +30,11 @@ window.onload = function () {
       loginEmail.classList.add("error-border");
       showErrorMail();
     }
+  }
+  function showSuccessLogin(id) {
+    var successInput = document.getElementById(id);
+    successInput.classList.remove("error-border");
+    successInput.classList.add("success-border");
   }
 
   function checkPass(e) {
@@ -58,8 +62,8 @@ window.onload = function () {
         if (intNumb + upper + lower == passCurrent.length) {
           passStatus = true;
           passError = "";
-          loginPass.classList.remove("error-border");
-          loginPass.classList.add("success-border");
+          showSuccessLogin(e.target.id);
+          return;
         } else {
           passError = "One of the fields have an error";
           passStatus = false;
@@ -77,6 +81,8 @@ window.onload = function () {
     e.preventDefault();
     if (emailStatus && passStatus) {
       mostrarRespuestaLogin(loginEmail.value, loginPass.value);
+    } else {
+      alert("ERROR: One of the fields have an error");
     }
   }
 
